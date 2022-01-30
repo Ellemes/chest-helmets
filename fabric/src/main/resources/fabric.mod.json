@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "authors": ["NinjaPhenix"],
+  "environment": "*",
+  "entrypoints": {
+    "main": ["ninjaphenix.chest_helmets.Main::INSTANCE"]
+  },
+  "mixins": [
+    {
+      "config": "chest-helmets.mixin.json",
+      "environment": "*"
+    }
+  ],
+  "id": "chest_helmets",
+  "version": "${version}"
+}
