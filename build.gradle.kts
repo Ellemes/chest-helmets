@@ -76,7 +76,10 @@ subprojects {
             add("mappings", "net.fabricmc:yarn:$minecraftVersion+build.$yarnVersion:v2")
 
             add("modImplementation", "net.fabricmc:fabric-loader:${project.property("fabric_loader_version")}")
-            add("modImplementation", "net.fabricmc.fabric-api:fabric-api:${project.property("fabric_api_version")}")
+
+            project.findProperty("fabric_api_version")?.also {
+                add("modImplementation", "net.fabricmc.fabric-api:fabric-api:$it")
+            }
         }
 
         project.extensions.getByType(net.fabricmc.loom.api.LoomGradleExtensionAPI::class).apply {
